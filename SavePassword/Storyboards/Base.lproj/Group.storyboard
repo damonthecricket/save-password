@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6p-dr-Scz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="ITv-uS-4WA">
+            <objects>
+                <viewController id="D6p-dr-Scz" customClass="GroupViewController" customModule="SavePassword" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYz-X7-uhv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5OB-x6-nbp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="group.cell.identifier" rowHeight="65" id="Mpl-Is-bOT" customClass="GroupTableViewCell" customModule="SavePassword" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mpl-Is-bOT" id="ZGi-9e-irU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNL-Cx-HlU">
+                                                    <rect key="frame" x="20" y="0.0" width="394" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-ON-h5d">
+                                                    <rect key="frame" x="20" y="30" width="394" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8KJ-ON-h5d" firstAttribute="top" secondItem="PNL-Cx-HlU" secondAttribute="bottom" id="1oU-cU-KsM"/>
+                                                <constraint firstAttribute="trailing" secondItem="8KJ-ON-h5d" secondAttribute="trailing" id="GmL-Rj-bgy"/>
+                                                <constraint firstItem="PNL-Cx-HlU" firstAttribute="leading" secondItem="ZGi-9e-irU" secondAttribute="leadingMargin" id="MDN-1D-3ly"/>
+                                                <constraint firstAttribute="trailing" secondItem="PNL-Cx-HlU" secondAttribute="trailing" id="eVd-Oj-CTH"/>
+                                                <constraint firstItem="PNL-Cx-HlU" firstAttribute="top" secondItem="ZGi-9e-irU" secondAttribute="top" id="edr-L4-g8a"/>
+                                                <constraint firstItem="8KJ-ON-h5d" firstAttribute="leading" secondItem="PNL-Cx-HlU" secondAttribute="leading" id="sRn-zp-X4E"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="loginLabel" destination="PNL-Cx-HlU" id="uW6-hD-KEW"/>
+                                            <outlet property="passwordLabel" destination="8KJ-ON-h5d" id="kvI-oJ-YSS"/>
+                                            <segue destination="zxF-LC-i3p" kind="show" identifier="show.password.storyboard.identifier" id="24y-CG-CFF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="D6p-dr-Scz" id="Rhx-hf-RHE"/>
+                                    <outlet property="delegate" destination="D6p-dr-Scz" id="aRj-A1-980"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5OB-x6-nbp" firstAttribute="leading" secondItem="yEk-Sd-6zu" secondAttribute="leading" id="1gB-QQ-DuA"/>
+                            <constraint firstItem="yEk-Sd-6zu" firstAttribute="bottom" secondItem="5OB-x6-nbp" secondAttribute="bottom" id="ZPA-5f-z9C"/>
+                            <constraint firstItem="5OB-x6-nbp" firstAttribute="top" secondItem="yEk-Sd-6zu" secondAttribute="top" id="mOC-Cy-cwW"/>
+                            <constraint firstItem="yEk-Sd-6zu" firstAttribute="trailing" secondItem="5OB-x6-nbp" secondAttribute="trailing" id="nM5-Jx-00s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yEk-Sd-6zu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="7tw-ZR-YbL">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="MEl-Zq-QNc">
+                                <connections>
+                                    <action selector="addBarButtonTapWithSender:" destination="D6p-dr-Scz" id="U1J-Dt-Rim"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="fQi-Ga-HMN">
+                                <connections>
+                                    <action selector="deleteBarButtonTapWithSender:" destination="D6p-dr-Scz" id="8zW-R0-xIh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deleteBarButtonItem" destination="fQi-Ga-HMN" id="qn9-r2-xDS"/>
+                        <outlet property="doneBarButtonItem" destination="VFv-if-MZg" id="gSF-dg-vfH"/>
+                        <outlet property="tableView" destination="5OB-x6-nbp" id="CHP-Ab-CIa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9Q-Pk-Hsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="done" id="VFv-if-MZg">
+                    <connections>
+                        <action selector="doneBarButtonTapWithSender:" destination="D6p-dr-Scz" id="Rxb-xG-CCx"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="6.6964285714285712"/>
+        </scene>
+        <!--Password-->
+        <scene sceneID="x5T-IU-3TR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Password" id="zxF-LC-i3p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwg-nk-teV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="7"/>
+        </scene>
+    </scenes>
+</document>
